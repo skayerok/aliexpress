@@ -17,7 +17,7 @@ export class CollectionProduct extends React.Component {
                             <p className='text-center card-text'>{this.props.name}</p>
                         </div>
                         <p className='product-category-link'>
-                            Category: <Link to={`/${this.props.category.tech_name}`}>
+                            Category: <Link to={`/c/${this.props.category.tech_name}`}>
                                 <strong>{this.props.category.name}</strong>
                             </Link>
                         </p>
