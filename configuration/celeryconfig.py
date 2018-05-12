@@ -10,3 +10,8 @@ CELERYBEAT_SCHEDULE = {
         'schedule': timedelta(hours=1)
     },
 }
+
+try:
+    from .celeryconfig_local import *
+except ImportError:
+    pass
