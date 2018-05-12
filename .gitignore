@@ -3,6 +3,7 @@ venv
 bundles
 *.pyc
 staticfiles
+celeryconfig_local.py
 .env
 env
 node_modules
