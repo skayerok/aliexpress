@@ -3,6 +3,7 @@ from celery.task import task
 from django.utils import timezone as tz
 
 from ali_api.api import EpnApi
+from configuration.celery import app
 from aliexpress.models import Product, Store, Picture, Category
 
 # internal fieldname -> external fieldname
@@ -79,7 +80,7 @@ def create_ali_products():
             offset += 100
 
 
-@task(
+@app.task(
     name='aliexpress.publish_product',
 )
 def publish_product():

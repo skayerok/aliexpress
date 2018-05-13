@@ -1,10 +1,10 @@
 from datetime import timedelta
 
-BROKER_URL = 'amqp://guest:guest@localhost:5672//'
+broker_url = 'amqp://guest:guest@localhost:5672//'
 
-CELERY_IMPORTS = ('aliexpress.tasks', )
+imports = ('aliexpress.tasks', )
 
-CELERYBEAT_SCHEDULE = {
+beat_schedule = {
     'aliexpress.publish_product': {
         'task': 'aliexpress.publish_product',
         'schedule': timedelta(hours=1)
