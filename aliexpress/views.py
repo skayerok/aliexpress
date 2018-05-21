@@ -69,9 +69,8 @@ def single_product(request, ali_id):
 
 
 def category_products(request, category_name):
-    try:
-        Category.objects.get(tech_name=category_name)
-    except Category.DoesNotExist:
+    categories = Category.objects.filter(tech_name=category_name)
+    if not categories.exists():
         raise Http404
     return render(request, 'base.html')
 
