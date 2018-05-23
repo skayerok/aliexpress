@@ -51,11 +51,13 @@ export class Products extends React.Component {
                     }
 
                 </div>
-                <Pagination prev={this.props.prev}
+                <div className="row justify-content-center">
+                    <Pagination prev={this.props.prev}
                             next={this.props.next}
                             updatePage={this.props.updatePage}
                             currentPage={this.props.currentPage}
-                />
+                    />
+                </div>
             </div>
         )
     }

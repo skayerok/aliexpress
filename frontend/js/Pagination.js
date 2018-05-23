@@ -26,7 +26,7 @@ export class Pagination extends React.Component {
             Next
         </button>;
         return (
-            <nav className="pagination d-flex justify-content-between w-25 mx-auto align-items-center">
+            <nav className="d-flex justify-content-between align-items-center col-xl-4 col-md-6 col-xs-12">
                 {prev}
                 {this.props.currentPage}
                 {next}
