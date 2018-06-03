@@ -11,6 +11,12 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         api = EpnApi()
         categories = api.get_categories()
+
+        # workaround for some products with category_id == 0
+        categories.append({
+            'id': 0,
+            'title': 'Other',
+        })
         total = len(categories)
         created_count = 0
         for cat in categories:
