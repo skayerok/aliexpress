@@ -128,11 +128,13 @@ export class CategoryProducts extends Home {
                     }
 
                 </div>
-                <Pagination prev={this.state.prev}
-                            next={this.state.next}
-                            updatePage={this.updatePage}
-                            currentPage={this.currentPage}
-                />
+                <div className="row justify-content-center">
+                    <Pagination prev={this.state.prev}
+                                next={this.state.next}
+                                updatePage={this.updatePage}
+                                currentPage={this.currentPage}
+                    />
+                </div>
             </div>
         )
     }
