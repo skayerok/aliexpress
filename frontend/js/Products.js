@@ -6,6 +6,12 @@ import { Pagination } from "./Pagination";
 export class CollectionProduct extends React.Component {
     render() {
         const product_url = `/p/${this.props.ali_id}`;
+        const category = this.props.showProductCategory ?
+            <p className='product-category-link'>
+                Category: <Link to={`/c/${this.props.category.tech_name}`}>
+                <strong>{this.props.category.name}</strong>
+            </Link>
+            </p> : '';
         return (
             <div className='col-xl-4 col-md-6 col-xs-12 mb-3'>
                 <div className='card h-100'>
@@ -16,11 +22,7 @@ export class CollectionProduct extends React.Component {
                         <div className='mb-2'>
                             <p className='text-center card-text'>{this.props.name}</p>
                         </div>
-                        <p className='product-category-link'>
-                            Category: <Link to={`/c/${this.props.category.tech_name}`}>
-                                <strong>{this.props.category.name}</strong>
-                            </Link>
-                        </p>
+                        {category}
                         <p className='card-text mt-2'>Price: <strong>{this.props.price}$</strong></p>
                     </div>
                     <div className='card-footer d-flex justify-content-between'>
@@ -40,7 +42,8 @@ export class Products extends React.Component {
                 <div className='row align-content-stretch'>
                     {
                         this.props.products.map(product =>
-                            <CollectionProduct key={product.ali_id}
+                            <CollectionProduct showProductCategory={true}
+                                               key={product.ali_id}
                                                ali_id={product.ali_id}
                                                name={product.name}
                                                preview={product.preview_url}

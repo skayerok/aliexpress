@@ -114,10 +114,12 @@ export class CategoryProducts extends Home {
         document.title = this.pageTitle;
         return (
             <div className='col-xs-12 col-lg-9'>
+                <h2 className='text-center mb-4'>Products by category {this.category_name}</h2>
                 <div className='row'>
                     {
                         this.state.products.map(product =>
-                            <CollectionProduct key={product.ali_id}
+                            <CollectionProduct showProductCategory={false}
+                                               key={product.ali_id}
                                                ali_id={product.ali_id}
                                                name={product.name}
                                                preview={product.preview_url}
