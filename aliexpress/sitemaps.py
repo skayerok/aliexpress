@@ -6,6 +6,7 @@ from aliexpress.models import Product, Category
 
 class ProductsSitemap(Sitemap):
     changefreq = 'never'
+    protocol = 'https'
 
     def items(self):
         return Product.objects.filter(is_published=True).order_by('publish_dt')
@@ -19,6 +20,7 @@ class ProductsSitemap(Sitemap):
 
 class CategorySitemap(Sitemap):
     changefreq = 'hourly'
+    protocol = 'https'
 
     def items(self):
         return Category.objects.all().order_by('tech_name')
